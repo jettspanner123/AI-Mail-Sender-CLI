@@ -1,0 +1,15 @@
+{
+  "name": "ai-mail-sender-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:secrets": "bash -c 'source smtp_env.sh && exec $SHELL'",
+    "dev:start": "go run ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
