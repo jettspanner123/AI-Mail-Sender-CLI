@@ -1,10 +1,10 @@
 # AI Mail Sender CLI
 
-![Go](https://img.shields.io/badge/Go-1.25%2B-00ADD8?style=for-the-badge&logo=go&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-Required_for_scripts-339933?style=for-the-badge&logo=node.js&logoColor=white)
-![SMTP](https://img.shields.io/badge/SMTP-Enabled-FF6B6B?style=for-the-badge&logo=gmail&logoColor=white)
-![Concurrency](https://img.shields.io/badge/Concurrency-10_workers-7A5CFA?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Production_Ready-2EA043?style=for-the-badge)
+![Go](https://img.shields.io/badge/Go-1.25%2B-00ADD8?style=for-the-badge&logo=go&logoColor=white&labelColor=00ADD8&color=00ADD8)
+![Node.js](https://img.shields.io/badge/Node.js-Required_for_scripts-339933?style=for-the-badge&logo=node.js&logoColor=white&labelColor=339933&color=339933)
+![SMTP](https://img.shields.io/badge/SMTP-Enabled-FF6B6B?style=for-the-badge&logo=gmail&logoColor=white&labelColor=FF6B6B&color=FF6B6B)
+![Concurrency](https://img.shields.io/badge/Concurrency-10_workers-7A5CFA?style=for-the-badge&logo=fastapi&logoColor=white&labelColor=7A5CFA&color=7A5CFA)
+![Status](https://img.shields.io/badge/Status-Production_Ready-2EA043?style=for-the-badge&logo=checkmarx&logoColor=white&labelColor=2EA043&color=2EA043)
 
 This project sends personalized emails from a CSV list, attaches a PDF file, and logs each send result to output.log.
 
@@ -18,7 +18,9 @@ This project sends personalized emails from a CSV list, attaches a PDF file, and
 
 1. Install npm dependencies (if needed for your environment):
 
-   npm install
+<code>
+npm install
+</code>
 
 2. Open and update SMTP values in [smtp_env.sh](smtp_env.sh):
    - SMTP_HOST
@@ -37,7 +39,7 @@ This project sends personalized emails from a CSV list, attaches a PDF file, and
 
 This repo uses two main npm commands:
 
-1. npm run dev:secrets
+1.<code>npm run dev:secrets</code>
 
    What it does:
    - 🔐 Loads environment variables from [smtp_env.sh](smtp_env.sh)
@@ -45,32 +47,22 @@ This repo uses two main npm commands:
 
    Use this first.
 
-2. npm run dev:start
+2.<code>npm run dev:start</code>
 
    What it does:
    - 🚀 Runs the Go mail sender app
 
    Use this after running dev:secrets.
 
-## Typical Run Flow ▶️
-
-In terminal 1:
-
-npm run dev:secrets
-
-In the new shell session:
-
-npm run dev:start
-
 ## Optional Arguments 🧩
 
 You can also run the app directly with custom paths:
 
-go run . <csv_file_path> <attachment_file_path>
+<code>go run . &lt;csv_file_path&gt; &lt;attachment_file_path&gt;</code>
 
 Example:
 
-go run . assets/dataset_test.csv "assets/Hunar Conversational AI Agents_Self Serve_V1.pdf"
+<code>go run . assets/dataset_test.csv "assets/Hunar Conversational AI Agents_Self Serve_V1.pdf"</code>
 
 ## Output 🧾
 
