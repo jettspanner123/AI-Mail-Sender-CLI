@@ -5,6 +5,7 @@ import (
 	"os"
 	"strings"
 
+	"github.com/jettspanner123/AI-Mail-Sender-CLI/constants"
 	"github.com/jettspanner123/AI-Mail-Sender-CLI/models"
 )
 
@@ -16,7 +17,7 @@ func LoadSMTPConfig() (models.SMTPConfig, error) {
 		Password: os.Getenv("SMTP_PASSWORD"),
 		FromName: strings.TrimSpace(os.Getenv("SMTP_FROM_NAME")),
 		From:     strings.TrimSpace(os.Getenv("SMTP_FROM")),
-		Subject:  strings.TrimSpace(os.Getenv("SMTP_SUBJECT")),
+		Subject:  constants.EMAIL_SUBJECT,
 	}
 
 	if config.Port == "" {

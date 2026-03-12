@@ -18,9 +18,7 @@ This project sends personalized emails from a CSV list, attaches a PDF file, and
 
 1. Install npm dependencies (if needed for your environment):
 
-<code>
-npm install
-</code>
+<code>npm install</code>
 
 2. Open and update SMTP values in [smtp_env.sh](smtp_env.sh):
    - SMTP_HOST

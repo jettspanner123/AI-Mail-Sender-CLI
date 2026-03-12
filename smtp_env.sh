@@ -11,7 +11,6 @@ export SMTP_PASSWORD="zheg gytc glqb oogo"
 # Sender and email metadata
 export SMTP_FROM_NAME="Mohit Chitkara"
 export SMTP_FROM="mohitchitkara@hunar.ai"
-export SMTP_SUBJECT="Optimizing Your Hiring Process with Hunar.ai"
 
 # Optional: override defaults used by the Go program
 # export CSV_PATH="assets/dataset.csv"
