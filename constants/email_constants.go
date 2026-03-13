@@ -30,3 +30,6 @@ var EMAIL_CONTENT = `
 `
 
 var EMAIL_SUBJECT = "Optimizing Your Hiring Process with Hunar.ai"
+
+var EMAIL_DEFAULT_DATASET = "assets/dataset.csv"
+var EMAIL_DEFAULT_ATACHMENT = "assets/Hunar Conversational AI Agents_Self Serve_V1.pdf"

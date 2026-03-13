@@ -12,6 +12,10 @@ export SMTP_PASSWORD="zheg gytc glqb oogo"
 export SMTP_FROM_NAME="Mohit Chitkara"
 export SMTP_FROM="mohitchitkara@hunar.ai"
 
+
+# AI Options
+export AI_KEY="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"
+
 # Optional: override defaults used by the Go program
 # export CSV_PATH="assets/dataset.csv"
 # export ATTACHMENT_PATH="assets/Hunar Conversational AI Agents_Self Serve_V1.pdf"
@@ -32,4 +36,4 @@ print_var_status "SMTP_USERNAME"
 print_var_status "SMTP_PASSWORD"
 print_var_status "SMTP_FROM_NAME"
 print_var_status "SMTP_FROM"
-print_var_status "SMTP_SUBJECT"
+print_var_status "AI_KEY"

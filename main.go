@@ -14,8 +14,8 @@ import (
 )
 
 func main() {
-	filePath := "assets/dataset.csv"
-	attachmentPath := "assets/Hunar Conversational AI Agents_Self Serve_V1.pdf"
+	filePath := constants.EMAIL_DEFAULT_DATASET
+	attachmentPath := constants.EMAIL_DEFAULT_ATACHMENT
 	if len(os.Args) > 1 {
 		filePath = os.Args[1]
 	}
@@ -29,7 +29,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	config, err := config.LoadSMTPConfig()
+	smtpConfig, err := config.LoadSMTPConfig()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "invalid SMTP config: %v\n", err)
 		os.Exit(1)
@@ -71,7 +71,7 @@ func main() {
 				defer wg.Done()
 
 				personalizedBody := strings.ReplaceAll(constants.EMAIL_CONTENT, "{{First Name}}", c.FirstName)
-				msg, err := utils.BuildEmailMessage(config, c.Email, personalizedBody, attachmentPath, attachmentData)
+				msg, err := utils.BuildEmailMessage(smtpConfig, c.Email, personalizedBody, attachmentPath, attachmentData)
 				if err != nil {
 					results <- models.SendResult{
 						Line:    fmt.Sprintf("%s::%s::UnSuccessful ❌::TimeTaken 0s", c.FullName, c.Email),
@@ -80,7 +80,7 @@ func main() {
 					return
 				}
 
-				duration, err := utils.SendEmailWithProgress(config, c.Email, msg)
+				duration, err := utils.SendEmailWithProgress(smtpConfig, c.Email, msg)
 				if err != nil {
 					results <- models.SendResult{
 						Line:    fmt.Sprintf("%s::%s::UnSuccessful ❌::TimeTaken %s", c.FullName, c.Email, duration.Round(time.Second)),

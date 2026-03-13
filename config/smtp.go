@@ -1,7 +1,7 @@
 package config
 
 import (
-	"fmt"
+	"errors"
 	"os"
 	"strings"
 
@@ -21,14 +21,15 @@ func LoadSMTPConfig() (models.SMTPConfig, error) {
 	}
 
 	if config.Port == "" {
-		config.Port = "587"
-	}
-	if config.Subject == "" {
-		config.Subject = "Hunar.ai | Conversational AI Recruiters"
+		config.Port = constants.SMTP_DEFAULT_MAIL_PORT
 	}
 
-	if config.Host == "" || config.From == "" {
-		return models.SMTPConfig{}, fmt.Errorf("SMTP_HOST and SMTP_FROM are required")
+	if config.Host == "" {
+		config.Host = constants.SMTP_DEFAULT_HOST
+	}
+
+	if config.From == "" {
+		return models.SMTPConfig{}, errors.New("SMTP_FROM is empty! Exiting...")
 	}
 
 	return config, nil
