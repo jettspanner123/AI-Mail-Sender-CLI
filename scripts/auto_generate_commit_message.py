@@ -45,7 +45,7 @@ def gather_git_info():
     if not diff or diff.strip() == "":
         ask_to_stage_changes()
         diff = subprocess.check_output(["git", "diff", "--cached"]).decode()
-        
+
     return diff
 
 def generate_commit_message_ollama(git_diff) -> ResponseData:

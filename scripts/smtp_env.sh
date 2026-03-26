@@ -12,7 +12,6 @@ export SMTP_PASSWORD="zheg gytc glqb oogo"
 export SMTP_FROM_NAME="Mohit Chitkara"
 export SMTP_FROM="mohitchitkara@hunar.ai"
 
-
 # AI Options
 export AI_KEY="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"
 
@@ -33,3 +32,4 @@ print_var_status "SMTP_PASSWORD"
 print_var_status "SMTP_FROM_NAME"
 print_var_status "SMTP_FROM"
 print_var_status "AI_KEY"
+
