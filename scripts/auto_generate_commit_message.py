@@ -44,7 +44,8 @@ def gather_git_info():
 
     if not diff or diff.strip() == "":
         ask_to_stage_changes()
-
+        diff = subprocess.check_output(["git", "diff", "--cached"]).decode()
+        
     return diff
 
 def generate_commit_message_ollama(git_diff) -> ResponseData:
@@ -158,9 +159,6 @@ def get_refined_commit_message(data: ResponseData) -> str:
 
 if __name__ == "__main__":
     git_diff = gather_git_info()
-    if not git_diff or git_diff.strip() == "":
-        print("No staged changes to commit.")
-        exit(0)
     commit_message = get_refined_commit_message(generate_commit_message_groq(git_diff))
     subprocess.run(["git", "add", "*"])
     subprocess.run(["git", "commit", "-m", commit_message])

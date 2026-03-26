@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:secrets": "bash -c 'source scripts/smtp_env.sh && exec $SHELL'",
-    "dev:start": "go run ."
+    "dev:start": "go run .",
+    "git:push": "./scripts/.venv/bin/python scripts/auto_generate_commit_message.py"
   },
   "keywords": [],
   "author": "",

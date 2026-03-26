@@ -14,7 +14,7 @@ export SMTP_FROM="mohitchitkara@hunar.ai"
 
 
 # AI Options
-export AI_KEY="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"
+export AI_KEY="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"
 
 print_var_status() {
 	var_name="$1"
