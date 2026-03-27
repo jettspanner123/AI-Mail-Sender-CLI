@@ -20,7 +20,7 @@ This project sends personalized emails from a CSV list, attaches a PDF file, and
 
 <code>npm install</code>
 
-2. Open and update SMTP values in [smtp_env.sh](scripts/smtp_env.sh):
+2. Open and update SMTP values in [smtp_env.sh](smtp_env.sh):
    - SMTP_HOST
    - SMTP_PORT
    - SMTP_USERNAME
@@ -40,7 +40,7 @@ This repo uses two main npm commands:
 1.<code>npm run dev:secrets</code>
 
    What it does:
-   - 🔐 Loads environment variables from [smtp_env.sh](scripts/smtp_env.sh)
+   - 🔐 Loads environment variables from [smtp_env.sh](smtp_env.sh)
    - 🧪 Opens a new shell session with those variables available
 
    Use this first.
@@ -71,4 +71,4 @@ Example:
 
 - ⚡ Emails are sent concurrently in batches of 10.
 - ⏱️ After every 10 successful emails, the app waits 1 minute before continuing.
-- 🔒 Keep [smtp_env.sh](scripts/smtp_env.sh) secure, since it contains SMTP credentials.
+- 🔒 Keep [smtp_env.sh](smtp_env.sh) secure, since it contains SMTP credentials.
